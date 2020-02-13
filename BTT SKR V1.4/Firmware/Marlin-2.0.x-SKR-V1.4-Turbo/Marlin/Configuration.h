@@ -134,11 +134,11 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Mole's Ender 3"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
-//#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "86eb2b8b-f514-48f5-9172-22887e8dfed5"
 
 // @section extruder
 
@@ -718,7 +718,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1027,7 +1027,7 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
-#define INVERT_Y_DIR false
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR true
 
 // @section extruder
@@ -1407,7 +1407,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-//#define EEPROM_SETTINGS     // Persistent storage with M500 and M501
+#define EEPROM_SETTINGS     // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #if ENABLED(EEPROM_SETTINGS)
@@ -1427,7 +1427,7 @@
 //
 // M100 Free Memory Watcher
 //
-//#define M100_FREE_MEMORY_WATCHER    // Add M100 (Free Memory Watcher) to debug memory usage
+#define M100_FREE_MEMORY_WATCHER    // Add M100 (Free Memory Watcher) to debug memory usage
 
 //
 // G20/G21 Inch mode support
@@ -1442,20 +1442,30 @@
 // @section temperature
 
 // Preheat Constants
-#define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND  180
-#define PREHEAT_1_TEMP_BED      70
+#define PREHEAT_1_LABEL       "PLA cold"
+#define PREHEAT_1_TEMP_HOTEND  160
+#define PREHEAT_1_TEMP_BED      50
 #define PREHEAT_1_FAN_SPEED      0 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND  180
-#define PREHEAT_2_TEMP_BED      85
+#define PREHEAT_2_LABEL       "PLA hot"
+#define PREHEAT_2_TEMP_HOTEND  200
+#define PREHEAT_2_TEMP_BED      70
 #define PREHEAT_2_FAN_SPEED      0 // Value from 0 to 255
 
-//#define PREHEAT_2_LABEL       "ABS"
-//#define PREHEAT_2_TEMP_HOTEND  240
-//#define PREHEAT_2_TEMP_BED     110
-//#define PREHEAT_2_FAN_SPEED      0 // Value from 0 to 255
+#define PREHEAT_3_LABEL       "PETG cold"
+#define PREHEAT_3_TEMP_HOTEND  180
+#define PREHEAT_3_TEMP_BED      65
+#define PREHEAT_3_FAN_SPEED      0 // Value from 0 to 255
+
+#define PREHEAT_4_LABEL       "PETG hot"
+#define PREHEAT_4_TEMP_HOTEND  210
+#define PREHEAT_4_TEMP_BED      85
+#define PREHEAT_4_FAN_SPEED      0 // Value from 0 to 255
+
+//#define PREHEAT_5_LABEL       "ABS"
+//#define PREHEAT_5_TEMP_HOTEND  240
+//#define PREHEAT_5_TEMP_BED     110
+//#define PREHEAT_5_FAN_SPEED      0 // Value from 0 to 255
 
 /**
  * Nozzle Park
@@ -1709,7 +1719,7 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
 
 //
 // SPEAKER/BUZZER
@@ -1959,7 +1969,7 @@
 // This is RAMPS-compatible using a single 10-pin connector.
 // (For CR-10 owners who want to replace the Melzi Creality board but retain the display)
 //
-//#define CR10_STOCKDISPLAY
+#define CR10_STOCKDISPLAY
 
 //
 // ANET and Tronxy Graphical Controller
